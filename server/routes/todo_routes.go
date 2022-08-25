@@ -1,7 +1,13 @@
 package routes
 
-import "github.com/gofiber/fiber/v2"
+import (
+	"server/controllers"
 
-func UseRoute(app *fiber.App) {
+	"github.com/gofiber/fiber/v2"
+)
+
+func TodoRoute(app *fiber.App) {
 	// All routes come here
+
+	app.Post("/todo", controllers.CreateTodo)
 }
