@@ -12,10 +12,15 @@ func main() {
 	app := fiber.New()
 
 	// run database
-    configs.ConnectDB()
+	configs.ConnectDB()
 
 	// routes
 	routes.TodoRoute(app)
 
-	app.Listen(":6000")
+	err := app.Listen(":8080")
+	if err != nil {
+		return
+	}
 }
+
+// HI
